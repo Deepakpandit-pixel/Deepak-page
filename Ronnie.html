@@ -4,393 +4,309 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090b10">
-<title>Ronnie Fixer | Cricket Matchroom</title>
-<meta name="description" content="Join Ronnie Fixer on Telegram for cricket match insights and team updates.">
+<title>Ronnie Fixer | Cricket Community</title>
+<meta name="description" content="Join Ronnie Fixer on Telegram for cricket analysis and match updates.">
 
 <style>
 :root {
-  --bg: #090b10;
-  --panel: #121722;
-  --gold: #f6c85f;
-  --red: #f05b55;
-  --white: #f7f8fb;
-  --muted: #a6afbf;
-  --line: #2b3342;
+  --bg: #100d2b;
+  --panel: #1a2038;
+  --line: #44316d;
+  --purple: #9b35ef;
+  --pink: #d52cba;
+  --text: #f8f7ff;
+  --muted: #a8abc0;
 }
+
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  background: linear-gradient(155deg, #111b2b, #090b10 45%, #15100d);
-  color: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #39205d, #17122f 42%, #0d1023);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  padding: 18px 14px 34px;
 }
 
 .wrap {
-  width: min(100% - 24px, 760px);
-  margin: auto;
-  padding: 16px 0 28px;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 7px 0 20px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 900;
-  font-size: 13px;
-  letter-spacing: 1px;
-}
-
-.mark {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ffe49b, #d89d29);
-  color: #15100a;
-  font-size: 18px;
-}
-
-.brand small {
-  display: block;
-  color: #9da8ba;
-  font-size: 9px;
-  letter-spacing: 1.8px;
-  margin-top: 4px;
-}
-
-.status {
-  font-size: 9px;
-  letter-spacing: 1px;
-  font-weight: 900;
-  color: #ffcf70;
-  border: 1px solid #59482b;
-  background: #211b12;
-  padding: 8px 10px;
-  border-radius: 5px;
+.panel {
+  background: linear-gradient(145deg, #1d223b, #16192f);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  margin-bottom: 22px;
+  padding: 28px 22px;
+  box-shadow: 0 12px 34px #0003;
 }
 
 .hero {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #3a414f;
-  background: linear-gradient(145deg, #151c29, #0e121a);
-  border-radius: 18px;
-  box-shadow: 0 22px 55px #0007;
+  text-align: center;
+  padding: 30px 20px 32px;
 }
 
-.hero:after {
-  content: "RF";
-  position: absolute;
-  right: -8px;
-  top: 15px;
-  font-size: 150px;
-  font-weight: 900;
-  letter-spacing: -12px;
-  color: #ffffff05;
-  pointer-events: none;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  padding: clamp(24px, 6vw, 48px) clamp(18px, 5vw, 40px);
-  text-align: left;
-}
-
-.kicker {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #ffcf70;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.kicker:before {
-  content: "";
-  width: 24px;
-  height: 2px;
-  background: var(--red);
+.logo {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #251b50, #101a39);
+  border: 5px solid #b43df1;
+  box-shadow: 0 0 22px #a735f5, inset 0 0 18px #d32cbd66;
+  font-size: 66px;
 }
 
 h1 {
-  font-size: clamp(42px, 10vw, 76px);
-  line-height: .98;
-  letter-spacing: -2.5px;
-  margin: 24px 0 17px;
-  font-weight: 950;
+  font-size: clamp(29px, 7vw, 42px);
+  line-height: 1.1;
+  margin: 0 0 12px;
+  font-weight: 900;
 }
 
-h1 span {
-  display: block;
-  color: var(--gold);
+.tagline {
+  font-size: 23px;
+  font-weight: 800;
+  color: #dc76e7;
+  margin-bottom: 26px;
 }
 
-.lead {
-  max-width: 510px;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.75;
-  margin: 0;
-}
-
-.divider {
-  height: 1px;
-  background: var(--line);
-  margin: 25px 0 19px;
-}
-
-.points {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 25px;
-}
-
-.point {
-  background: #ffffff05;
-  border: 1px solid #ffffff12;
-  border-radius: 10px;
-  padding: 14px 12px;
+.pills {
   display: flex;
+  justify-content: center;
   gap: 10px;
-  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.point .ico {
-  font-size: 20px;
-  line-height: 1.2;
+.pill {
+  padding: 9px 15px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 750;
+  background: #432567;
+  color: #e7c6ff;
+  border: 1px solid #7440a0;
 }
 
-.point strong {
-  display: block;
-  font-size: 12px;
-  margin-bottom: 5px;
+.pill.active {
+  background: #153e3b;
+  color: #8cf2bf;
+  border-color: #26785e;
 }
 
-.point small {
-  display: block;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.45;
+.section-title {
+  text-align: center;
+  font-size: 27px;
+  font-weight: 850;
+  margin: 0 0 25px;
 }
 
 .join {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 11px;
-  min-height: 64px;
-  width: 100%;
-  padding: 15px 18px;
-  border-radius: 9px;
-  background: linear-gradient(100deg, #f9d878, #edb63f);
-  color: #15120b;
+  display: block;
+  text-align: center;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 950;
-  letter-spacing: .5px;
-  box-shadow: 0 9px 25px #f5c4511f;
+  color: white;
+  font-size: clamp(17px, 4.5vw, 22px);
+  font-weight: 900;
+  letter-spacing: .3px;
+  padding: 23px 12px;
+  border-radius: 24px;
+  background: linear-gradient(100deg, var(--purple), var(--pink));
+  border: 2px solid #c45bff;
+  box-shadow: 0 0 26px #be35ed99;
+  transition: transform .15s;
 }
 
-.join:hover {
-  filter: brightness(1.06);
+.join:active {
+  transform: scale(.98);
 }
 
-.telegram {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
+.note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 15px;
 }
 
-.meta {
+.features {
+  padding: 29px 24px;
+}
+
+.features h2 {
+  font-size: 26px;
+  margin: 0 0 26px;
+}
+
+.feature {
   display: flex;
+  gap: 16px;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: #8f9aac;
-  font-size: 10px;
-  margin-top: 13px;
+  margin-bottom: 21px;
 }
 
-.meta:before {
-  content: "";
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  background: #52c98a;
+.feature:last-child {
+  margin-bottom: 0;
 }
 
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 16px;
-  color: #778397;
-  font-size: 10px;
-  line-height: 1.6;
+.icon {
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  font-size: 27px;
+  background: linear-gradient(145deg, #a633ec, #6632dc);
+  box-shadow: 0 5px 14px #0003;
 }
 
-.bottom strong {
-  color: #b6c0cf;
+.feature:nth-of-type(2) .icon {
+  background: linear-gradient(145deg, #e82b9c, #b329a4);
 }
 
-@media(max-width:430px) {
-  .wrap {
-    width: calc(100% - 20px);
-    padding-top: 10px;
-  }
-  .topbar { padding-bottom: 15px; }
-  .brand { font-size: 12px; }
-  .status { font-size: 8px; padding: 7px; }
-  .hero-inner { padding: 25px 17px 23px; }
-  h1 {
-    letter-spacing: -1.5px;
-    margin: 20px 0 14px;
-  }
-  .lead { font-size: 14px; }
-  .points { gap: 8px; }
-  .point { padding: 12px 9px; gap: 7px; }
-  .point .ico { font-size: 18px; }
-  .point strong { font-size: 11px; }
-  .point small { font-size: 10px; }
-  .join { font-size: 12px; min-height: 60px; }
-  .bottom { font-size: 9px; }
+.feature:nth-of-type(3) .icon {
+  background: linear-gradient(145deg, #347ff4, #3150d7);
+}
+
+.feature:nth-of-type(4) .icon {
+  background: linear-gradient(145deg, #22c778, #128c5b);
+}
+
+.feature strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.feature span {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.footer {
+  text-align: center;
+  color: #8e91a9;
+  font-size: 12px;
+  padding: 5px 0 10px;
+}
+
+@media (min-width: 520px) {
+  body { padding-top: 28px; }
+  .hero { padding-top: 40px; }
+  .panel { padding: 32px; }
 }
 </style>
 
-<!-- Existing Meta Pixel -->
+<!-- Meta Pixel -->
 <script>
-!function(f,b,e,v,n,t,s){
-  if(f.fbq)return;
-  n=f.fbq=function(){
+!function(f,b,e,v,n,t,s) {
+  if(f.fbq) return;
+  n=f.fbq=function() {
     n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
   };
-  if(!f._fbq)f._fbq=n;
+  if(!f._fbq) f._fbq=n;
   n.push=n;
-  n.loaded=!0;
+  n.loaded=true;
   n.version='2.0';
   n.queue=[];
   t=b.createElement(e);
-  t.async=!0;
+  t.async=true;
   t.src=v;
   s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)
+  s.parentNode.insertBefore(t,s);
 }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init','1623744675893616');
 fbq('track','PageView');
 </script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1623744675893616&ev=PageView&noscript=1"/>
+</noscript>
 </head>
 
 <body>
-<div class="wrap">
+<main class="wrap">
 
-<header class="topbar">
-  <div class="brand">
-    <div class="mark">RF</div>
-    <div>
-      RONNIE FIXER
-      <small>CRICKET MATCHROOM</small>
+  <section class="panel hero">
+    <div class="logo">🏏</div>
+    <h1>RONNIE FIXER</h1>
+    <div class="tagline">Cricket Matchroom</div>
+
+    <div class="pills">
+      <span class="pill">★ Match Analysis</span>
+      <span class="pill active">✓ Join Community</span>
     </div>
-  </div>
-  <div class="status">MATCH INSIGHTS</div>
-</header>
+  </section>
 
-<main class="hero">
-<div class="hero-inner">
+  <section class="panel">
+    <h2 class="section-title">Join Our Community</h2>
 
-  <div class="kicker">CRICKET • ANALYSIS • UPDATES</div>
+    <a class="join"
+       id="joinTelegram"
+       href="https://t.me/+TO1YypaR8Lo4MWM1"
+       target="_blank"
+       rel="noopener">
+       ✈️ &nbsp; JOIN TELEGRAM NOW
+    </a>
 
-  <h1>READ THE<br>GAME.<span>STAY AHEAD.</span></h1>
+    <p class="note">
+      Get cricket analysis and match updates on Telegram.
+    </p>
+  </section>
 
-  <p class="lead">
-    A sharper view of the match. Get cricket analysis, team updates
-    and key talking points in one Telegram channel.
-  </p>
+  <section class="panel features">
+    <h2>✨ What You Get</h2>
 
-  <div class="divider"></div>
-
-  <div class="points">
-    <div class="point">
-      <div class="ico">🏏</div>
+    <div class="feature">
+      <div class="icon">🎯</div>
       <div>
-        <strong>Match Breakdown</strong>
-        <small>Stats and match context</small>
+        <strong>Match Analysis</strong>
+        <span>Cricket match insights and analysis</span>
       </div>
     </div>
 
-    <div class="point">
-      <div class="ico">📋</div>
+    <div class="feature">
+      <div class="icon">⚡</div>
       <div>
-        <strong>Team News</strong>
-        <small>Line-ups and updates</small>
+        <strong>Live Updates</strong>
+        <span>Follow match updates and key moments</span>
       </div>
     </div>
 
-    <div class="point">
-      <div class="ico">📈</div>
+    <div class="feature">
+      <div class="icon">💎</div>
       <div>
-        <strong>Game Trends</strong>
-        <small>Form and key details</small>
+        <strong>Community Access</strong>
+        <span>Connect with fellow cricket fans</span>
       </div>
     </div>
 
-    <div class="point">
-      <div class="ico">⚡</div>
+    <div class="feature">
+      <div class="icon">🏆</div>
       <div>
-        <strong>Quick Updates</strong>
-        <small>Delivered on Telegram</small>
+        <strong>Cricket Focus</strong>
+        <span>One place for cricket-related content</span>
       </div>
     </div>
-  </div>
+  </section>
 
-  <a class="join"
-     id="joinTelegram"
-     href="https://t.me/+TO1YypaR8Lo4MWM1"
-     target="_blank"
-     rel="noopener noreferrer">
-
-    <svg class="telegram" viewBox="0 0 24 24"
-         fill="currentColor" aria-hidden="true">
-      <path d="M21.8 4.6 18.7 19c-.2 1-.8 1.2-1.6.7l-4.4-3.2-2.1 2c-.2.2-.4.4-.8.4l.3-4.5 8.2-7.4c.4-.3-.1-.5-.6-.2L7.6 13.2l-4.3-1.4c-.9-.3-.9-.9.2-1.3L20.3 3.9c.8-.3 1.7.2 1.5.7Z"/>
-    </svg>
-
-    JOIN RONNIE FIXER ON TELEGRAM
-  </a>
-
-  <div class="meta">
-    Opens Telegram directly · No guaranteed outcomes
+  <div class="footer">
+    © <span id="year"></span> Ronnie Fixer · Cricket community
   </div>
 
-</div>
 </main>
 
-<footer class="bottom">
-  <span>© <span id="year"></span> Ronnie Fixer</span>
-  <span><strong>CRICKET INSIGHTS</strong><br>Informational purposes only</span>
-</footer>
-
-</div>
-
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent =
+  new Date().getFullYear();
 
-// This tracks a button click, not a confirmed Telegram channel join.
 document.getElementById('joinTelegram').addEventListener('click', function() {
   if (typeof window.fbq === 'function') {
     window.fbq('track', 'Subscribe');
