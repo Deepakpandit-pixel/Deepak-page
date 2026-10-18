@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b10">
+<title>Ronnie Fixer | Cricket Matchroom</title>
+<meta name="description" content="Join Ronnie Fixer on Telegram for cricket match insights and team updates.">
+
+<style>
+:root {
+  --bg: #090b10;
+  --panel: #121722;
+  --gold: #f6c85f;
+  --red: #f05b55;
+  --white: #f7f8fb;
+  --muted: #a6afbf;
+  --line: #2b3342;
+}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: linear-gradient(155deg, #111b2b, #090b10 45%, #15100d);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.wrap {
+  width: min(100% - 24px, 760px);
+  margin: auto;
+  padding: 16px 0 28px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 0 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffe49b, #d89d29);
+  color: #15100a;
+  font-size: 18px;
+}
+
+.brand small {
+  display: block;
+  color: #9da8ba;
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  margin-top: 4px;
+}
+
+.status {
+  font-size: 9px;
+  letter-spacing: 1px;
+  font-weight: 900;
+  color: #ffcf70;
+  border: 1px solid #59482b;
+  background: #211b12;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #3a414f;
+  background: linear-gradient(145deg, #151c29, #0e121a);
+  border-radius: 18px;
+  box-shadow: 0 22px 55px #0007;
+}
+
+.hero:after {
+  content: "RF";
+  position: absolute;
+  right: -8px;
+  top: 15px;
+  font-size: 150px;
+  font-weight: 900;
+  letter-spacing: -12px;
+  color: #ffffff05;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: clamp(24px, 6vw, 48px) clamp(18px, 5vw, 40px);
+  text-align: left;
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffcf70;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.kicker:before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--red);
+}
+
+h1 {
+  font-size: clamp(42px, 10vw, 76px);
+  line-height: .98;
+  letter-spacing: -2.5px;
+  margin: 24px 0 17px;
+  font-weight: 950;
+}
+
+h1 span {
+  display: block;
+  color: var(--gold);
+}
+
+.lead {
+  max-width: 510px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  margin: 25px 0 19px;
+}
+
+.points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.point {
+  background: #ffffff05;
+  border: 1px solid #ffffff12;
+  border-radius: 10px;
+  padding: 14px 12px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.point .ico {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.point strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.point small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.join {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 64px;
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 9px;
+  background: linear-gradient(100deg, #f9d878, #edb63f);
+  color: #15120b;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 950;
+  letter-spacing: .5px;
+  box-shadow: 0 9px 25px #f5c4511f;
+}
+
+.join:hover {
+  filter: brightness(1.06);
+}
+
+.telegram {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #8f9aac;
+  font-size: 10px;
+  margin-top: 13px;
+}
+
+.meta:before {
+  content: "";
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #52c98a;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  color: #778397;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.bottom strong {
+  color: #b6c0cf;
+}
+
+@media(max-width:430px) {
+  .wrap {
+    width: calc(100% - 20px);
+    padding-top: 10px;
+  }
+  .topbar { padding-bottom: 15px; }
+  .brand { font-size: 12px; }
+  .status { font-size: 8px; padding: 7px; }
+  .hero-inner { padding: 25px 17px 23px; }
+  h1 {
+    letter-spacing: -1.5px;
+    margin: 20px 0 14px;
+  }
+  .lead { font-size: 14px; }
+  .points { gap: 8px; }
+  .point { padding: 12px 9px; gap: 7px; }
+  .point .ico { font-size: 18px; }
+  .point strong { font-size: 11px; }
+  .point small { font-size: 10px; }
+  .join { font-size: 12px; min-height: 60px; }
+  .bottom { font-size: 9px; }
+}
+</style>
+
+<!-- Existing Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){
+  if(f.fbq)return;
+  n=f.fbq=function(){
+    n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+  };
+  if(!f._fbq)f._fbq=n;
+  n.push=n;
+  n.loaded=!0;
+  n.version='2.0';
+  n.queue=[];
+  t=b.createElement(e);
+  t.async=!0;
+  t.src=v;
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)
+}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init','1623744675893616');
+fbq('track','PageView');
+</script>
+</head>
+
+<body>
+<div class="wrap">
+
+<header class="topbar">
+  <div class="brand">
+    <div class="mark">RF</div>
+    <div>
+      RONNIE FIXER
+      <small>CRICKET MATCHROOM</small>
+    </div>
+  </div>
+  <div class="status">MATCH INSIGHTS</div>
+</header>
+
+<main class="hero">
+<div class="hero-inner">
+
+  <div class="kicker">CRICKET • ANALYSIS • UPDATES</div>
+
+  <h1>READ THE<br>GAME.<span>STAY AHEAD.</span></h1>
+
+  <p class="lead">
+    A sharper view of the match. Get cricket analysis, team updates
+    and key talking points in one Telegram channel.
+  </p>
+
+  <div class="divider"></div>
+
+  <div class="points">
+    <div class="point">
+      <div class="ico">🏏</div>
+      <div>
+        <strong>Match Breakdown</strong>
+        <small>Stats and match context</small>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="ico">📋</div>
+      <div>
+        <strong>Team News</strong>
+        <small>Line-ups and updates</small>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="ico">📈</div>
+      <div>
+        <strong>Game Trends</strong>
+        <small>Form and key details</small>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="ico">⚡</div>
+      <div>
+        <strong>Quick Updates</strong>
+        <small>Delivered on Telegram</small>
+      </div>
+    </div>
+  </div>
+
+  <a class="join"
+     id="joinTelegram"
+     href="https://t.me/+TO1YypaR8Lo4MWM1"
+     target="_blank"
+     rel="noopener noreferrer">
+
+    <svg class="telegram" viewBox="0 0 24 24"
+         fill="currentColor" aria-hidden="true">
+      <path d="M21.8 4.6 18.7 19c-.2 1-.8 1.2-1.6.7l-4.4-3.2-2.1 2c-.2.2-.4.4-.8.4l.3-4.5 8.2-7.4c.4-.3-.1-.5-.6-.2L7.6 13.2l-4.3-1.4c-.9-.3-.9-.9.2-1.3L20.3 3.9c.8-.3 1.7.2 1.5.7Z"/>
+    </svg>
+
+    JOIN RONNIE FIXER ON TELEGRAM
+  </a>
+
+  <div class="meta">
+    Opens Telegram directly · No guaranteed outcomes
+  </div>
+
+</div>
+</main>
+
+<footer class="bottom">
+  <span>© <span id="year"></span> Ronnie Fixer</span>
+  <span><strong>CRICKET INSIGHTS</strong><br>Informational purposes only</span>
+</footer>
+
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// This tracks a button click, not a confirmed Telegram channel join.
+document.getElementById('joinTelegram').addEventListener('click', function() {
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', 'Subscribe');
+  }
+});
+</script>
+
+</body>
+</html>
